@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}All Courses{% endblock %}
+{% block title %}Все курсы{% endblock %}
 
 {% block content %}
-<h1>All Courses</h1>
+<h1>Все курсы</h1>
 <ul>
     {% for course in courses %}
         <li>
@@ -11,5 +11,5 @@
         </li>
     {% endfor %}
 </ul>
-<a href="{% url 'create_course' %}" class="button">Add New Course</a>
+<a href="{% url 'create_course' %}" class="button">Добавить новый курс</a>
 {% endblock %}

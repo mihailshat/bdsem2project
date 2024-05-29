@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}All Instructors{% endblock %}
+{% block title %}Все преподаватели{% endblock %}
 
 {% block content %}
-<h1>All Instructors</h1>
+<h1>Все преподаватели</h1>
 <table>
     <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Contact Number</th>
-        <th>Start Date</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Почта</th>
+        <th>Номер телефона</th>
+        <th>Дата начала</th>
     </tr>
     {% for instructor in instructors %}
     <tr>
@@ -22,5 +22,5 @@
     </tr>
     {% endfor %}
 </table>
-<a href="{% url 'create_instructor' %}" class="button">Add New Instructor</a>
+<a href="{% url 'create_instructor' %}" class="button">Добавить нового преподавателя</a>
 {% endblock %}

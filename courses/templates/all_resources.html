@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>All Resources</h1>
+  <h1>Все ресурсы</h1>
   <ul>
     {% for resource in resources %}
       <li>
         {{ resource.resource_name }} - {{ resource.resource_type }}
-        <a href="{% url 'topics_for_resource' resource.id %}" class="button">View Topics</a>
+        <a href="{% url 'topics_for_resource' resource.id %}" class="button">Просмотр тем</a>
       </li>
     {% endfor %}
   </ul>
-  <a href="{% url 'create_resource' %}" class="button">Create New Resource</a>
+  <a href="{% url 'create_resource' %}" class="button">Создать новый ресурс</a>
 {% endblock %}

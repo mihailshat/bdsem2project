@@ -1,18 +1,18 @@
 
 {% extends "base.html" %}
 
-{% block title %}All Grades{% endblock %}
+{% block title %}Все оценки{% endblock %}
 
 {% block content %}
-<h1>All Grades</h1>
+<h1>Все оценки</h1>
 <table>
     <thead>
         <tr>
-            <th>Student</th>
-            <th>Course</th>
-            <th>Grade</th>
-            <th>Date</th>
-            <th>Note</th>
+            <th>Студент</th>
+            <th>Курс</th>
+            <th>Оценка</th>
+            <th>Дата</th>
+            <th>Примечание</th>
         </tr>
     </thead>
     <tbody>
@@ -27,5 +27,5 @@
         {% endfor %}
     </tbody>
 </table>
-<a href="{% url 'create_grade' %}" class="button">Add New Grade</a>
+<a href="{% url 'create_grade' %}" class="button">Добавить новую оценку</a>
 {% endblock %}

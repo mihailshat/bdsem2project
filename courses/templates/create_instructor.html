@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Add New Instructor{% endblock %}
+{% block title %}Добавить нового преподавателя{% endblock %}
 
 {% block content %}
-<h1>Add New Instructor</h1>
+<h1>Добавить нового преподавателя</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
+    <button type="submit">Сохранить</button>
 </form>
-<a href="{% url 'all_instructors' %}">Back to Instructors</a>
+<a href="{% url 'all_instructors' %}">Назад к преподавателям</a>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Students for Course</h2>
+<h2>Студенты по курсу</h2>
 <ul>
   {% for course_student in course_students %}
     <li>{{ course_student.student.first_name }} {{ course_student.student.last_name }}</li>

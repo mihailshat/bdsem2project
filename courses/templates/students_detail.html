@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}Student Details: {{ student.first_name }} {{ student.last_name }}{% endblock %}
+{% block title %}Данные студента: {{ student.first_name }} {{ student.last_name }}{% endblock %}
 
 {% block content %}
-<h1>Student Details</h1>
-<p><strong>Name:</strong> {{ student.first_name }} {{ student.last_name }}</p>
-<p><strong>Email:</strong> {{ student.email }}</p>
-<p><strong>Enrollment Year:</strong> {{ student.enrollment_year }}</p>
-<a href="{% url 'edit_student' student.pk %}" class="button">Edit</a>
-<a href="{% url 'delete_student' student.pk %}" class="button">Delete</a>
-<a href="{% url 'courses_for_students' student.id %}" class="button">View Courses</a>
-<a href="{% url 'all_students' %}" class="button">Back to All Students</a>
+<h1>Данные студента</h1>
+<p><strong>Имя:</strong> {{ student.first_name }} {{ student.last_name }}</p>
+<p><strong>Почта:</strong> {{ student.email }}</p>
+<p><strong>Год поступления:</strong> {{ student.enrollment_year }}</p>
+<a href="{% url 'edit_student' student.pk %}" class="button">Редактировать</a>
+<a href="{% url 'delete_student' student.pk %}" class="button">Удалить</a>
+<a href="{% url 'courses_for_students' student.id %}" class="button">Посмотреть курсы</a>
+<a href="{% url 'all_students' %}" class="button">Назад ко всем студентам</a>
 {% endblock %}
