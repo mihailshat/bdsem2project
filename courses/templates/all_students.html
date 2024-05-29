@@ -1,0 +1,16 @@
+<!-- all_students.html -->
+{% extends "base.html" %}
+
+{% block title %}All Students{% endblock %}
+
+{% block content %}
+<h1>All Students</h1>
+<ul>
+    {% for student in students %}
+        <li>
+            <a href="{% url 'students_detail' student.pk %}">{{ student.first_name }} {{ student.last_name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_student' %}" class="button">Add New Student</a>
+{% endblock %}

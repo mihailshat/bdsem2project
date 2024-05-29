@@ -1,0 +1,15 @@
+<!-- В файле topics.html -->
+{% extends "base.html" %}
+{% block content %}
+  <h1>All Topics</h1>
+  <ul>
+    {% for topic in topics %}
+      <li>
+        {{ topic.topic_name }}
+        <!-- Добавляем кнопку для просмотра всех ресурсов для данной темы -->
+        <a href="{% url 'resources_for_topic' topic.id %}" class="button">View Resources</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'create_topic' %}" class="button">Create New Topic</a>
+{% endblock %}

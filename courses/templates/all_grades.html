@@ -1,0 +1,31 @@
+<!-- all_grades.html -->
+{% extends "base.html" %}
+
+{% block title %}All Grades{% endblock %}
+
+{% block content %}
+<h1>All Grades</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Course</th>
+            <th>Grade</th>
+            <th>Date</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for grade in grades %}
+            <tr>
+                <td>{{ grade.student.first_name }} {{ grade.student.last_name }}</td>
+                <td>{{ grade.course.course_name }}</td>
+                <td>{{ grade.grade }}</td>
+                <td>{{ grade.date }}</td>
+                <td>{{ grade.note }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'create_grade' %}" class="button">Add New Grade</a>
+{% endblock %}

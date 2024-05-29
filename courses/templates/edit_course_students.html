@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Course Students{% endblock %}
+
+{% block content %}
+<h1>Edit Course Students: {{ course.course_name }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Enrollment Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for form in formset %}
+                <tr>
+                    <td>{{ form.first_name }}</td>
+                    <td>{{ form.last_name }}</td>
+                    <td>{{ form.email }}</td>
+                    <td>{{ form.enrollment_year }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'course_detail' course.pk %}" class="button">Back to Course</a>
+{% endblock %}

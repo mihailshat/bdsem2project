@@ -1,0 +1,14 @@
+<!-- create_instructor.html -->
+{% extends "base.html" %}
+
+{% block title %}Add New Instructor{% endblock %}
+
+{% block content %}
+<h1>Add New Instructor</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'all_instructors' %}">Back to Instructors</a>
+{% endblock %}

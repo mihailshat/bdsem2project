@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+<h1>Список курсов</h1>
+<ul>
+    {% for course in courses %}
+        <li>{{ course.course_name }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_course' %}" class="button">Add New Course</a>
+{% endblock %}

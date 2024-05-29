@@ -1,0 +1,29 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Courses{% endblock %}</title>
+    {% load static %} <!-- Добавьте эту строку -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'all_courses' %}">Courses</a></li>
+                <li><a href="{% url 'all_students' %}">Students</a></li>
+                <li><a href="{% url 'all_grades' %}">Grades</a></li> 
+                <li><a href="{% url 'all_instructors' %}">Instructors</a></li> 
+                <li><a href="{% url 'all_topics' %}">Topics</a></li> 
+                <li><a href="{% url 'all_resources' %}">Resources</a></li> 
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

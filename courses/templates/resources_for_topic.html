@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Resources for Topic</h2>
+<ul>
+  {% for topic_resource in topic_resources %}
+    <li>{{ topic_resource.resource.resource_name }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

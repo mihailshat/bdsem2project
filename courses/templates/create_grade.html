@@ -1,0 +1,14 @@
+<!-- create_grade.html -->
+{% extends "base.html" %}
+
+{% block title %}Add New Grade{% endblock %}
+
+{% block content %}
+<h1>Add New Grade</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'all_grades' %}">Back to Grades</a>
+{% endblock %}
